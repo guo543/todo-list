@@ -66,7 +66,7 @@ class RegisterPage(FormView):
             [to_email],
             fail_silently=False,
         )
-        return render(self.request, 'base/email_sent.html', {message: f'An email was just sent to {to_email}, please check you email inbox to activate your account'})
+        return render(self.request, 'base/email_sent.html', {'message': f'An email was just sent to {to_email}, please check you email inbox to activate your account'})
     
     def get(self, *args, **kwargs):
         if self.request.user.is_authenticated:
@@ -122,7 +122,7 @@ class ResetPasswordView(FormView):
             fail_silently=False,
         )
         
-        return render(self.request, 'base/email_sent.html', {message: f'An email with the password reset link was just sent to {to_email} if there is an account associated with that email address, please check you email inbox to reset your password'})
+        return render(self.request, 'base/email_sent.html', {'message': f'An email with the password reset link was just sent to {to_email} if there is an account associated with that email address, please check you email inbox to reset your password'})
     
 class ActualResetPasswordForm(UserCreationForm):
     
