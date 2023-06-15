@@ -1,0 +1,1 @@
+DELETE FROM user_customuser WHERE username='guo543';
